@@ -1,7 +1,6 @@
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-// import java.util.*;
 
 /** Test class.
  * @author jaanus
@@ -46,6 +45,11 @@ public class HuffmanTest {
       huf.encode (text.getBytes());
       assertEquals (text + " number of bits in optimal encoding", 8,
          huf.bitLength());
+      text = "AAABBCD";
+      huf = new Huffman (text.getBytes());
+      huf.encode (text.getBytes());
+      assertEquals (text + " number of bits in optimal encoding", 13,
+              huf.bitLength());
       text = "AAAABC";
       huf = new Huffman (text.getBytes());
       huf.encode (text.getBytes());
@@ -62,6 +66,5 @@ public class HuffmanTest {
    public void testNullObject() {
       new Huffman (null);
    }
-
 }
 
